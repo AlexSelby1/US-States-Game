@@ -34,3 +34,11 @@ while len(guessed_states) < 50:
     #     print(x,y)
     # turtle.onscreenclick(get_mouse_click_coor)
 
+for state in states:
+    if state != guessed_states:
+        states_to_learn.append(state)
+        
+new_data = pandas.DataFrame(states_to_learn)
+
+new_data.to_csv("states_to_learn.csv")
+
